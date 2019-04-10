@@ -29,5 +29,12 @@ namespace Journal
             }
             return found;
         }
+
+        public void DeleteEntries(DateTime date)
+        {
+            List<Entry> found = FindEntries(date, true);
+            foreach (Entry entry in found)
+                entries.Remove(entry);
+        }
     }
 }
